@@ -86,7 +86,7 @@ src/
 
 ## Getting Started
 
-> [!NOTE]  
+> [!NOTE]
 > We are using **Next 15** with **React 19**, follow these steps:
 
 Clone the repo:
