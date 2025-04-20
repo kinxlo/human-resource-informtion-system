@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-import { getSession } from "@/lib/session/session";
 import axios from "axios";
 import Cookies from "js-cookie";
 
@@ -39,10 +38,10 @@ http.interceptors.request.use(
   async (config) => {
     await initializeCsrf();
     const xsrfToken = getCsrfToken();
-    const session = await getSession();
-    if (session?.user.token) {
-      config.headers.Authorization = `Bearer ${session.user.token}`;
-    }
+    // const session = await getSession();
+    // if (session?.user.token) {
+    //   config.headers.Authorization = `Bearer ${session.user.token}`;
+    // }
 
     if (xsrfToken) {
       config.headers["X-XSRF-TOKEN"] = decodeURIComponent(xsrfToken);

@@ -72,10 +72,13 @@ const CustomButton = forwardRef<HTMLButtonElement, ButtonProperties>(
     reference,
   ) => {
     const modifiedIcon = icon ? (
-      cloneElement(icon as ReactElement, {
-        className: "w-[1rem] h-[1rem] dark:invert dark:filter",
-        "data-testid": "icon",
-      })
+      cloneElement(
+        icon as ReactElement,
+        {
+          className: "w-[1rem] h-[1rem] dark:invert dark:filter",
+          "data-testid": "icon",
+        } as React.HTMLAttributes<HTMLElement>,
+      )
     ) : (
       <LuPlus className="h-[1rem] w-[1rem]" data-testid="icon" />
     );
